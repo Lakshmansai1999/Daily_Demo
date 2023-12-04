@@ -7,7 +7,7 @@ After=network.target
 User=harry
 Group=www-data
 WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
-ExecStart=/var/lib/jenkins/workspace/django-cicd/textutils/env/bin/gunicorn \
+ExecStart=/var/lib/jenkins/workspace/django-cicd/Daily_Demo/env/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
