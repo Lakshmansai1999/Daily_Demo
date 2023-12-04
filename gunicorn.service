@@ -4,14 +4,14 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=root
+User=harry
 Group=www-data
-WorkingDirectory=/var/lib/jenkins/workspace/django-cicd/extutils
-ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log --bind unix:/run/gunicorn.sock extutils.wsgi:application
-
-[Install]
-WantedBy=multi-user.target
-
+WorkingDirectory=/var/lib/jenkins/workspace/django-cicd
+ExecStart=/var/lib/jenkins/workspace/django-cicd/Daily_Demo/env/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          textutils.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
